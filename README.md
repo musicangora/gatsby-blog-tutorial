@@ -1,48 +1,44 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's hello-world starter
+  Gatsbyの hello-world スターターを使用しています！
 </h1>
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## 🚀 クイックスタート
 
-## 🚀 Quick start
+1.  **Gastbyのサイトを作成する**
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+    Gatsby CLI(コマンドラインツール)を使って、hello-worldスターターを指定して新しいサイトを作成します。
 
     ```shell
-    # create a new Gatsby site using the hello-world starter
+    # hello-worldスターターを使用して新しいGatsbyサイトを作成する
     gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
     ```
 
-1.  **Start developing.**
+2.  **開発を始めよう！**
 
-    Navigate into your new site’s directory and start it up.
+    新しく作ったサイトのディレクトリに移動して起動する。
 
     ```shell
     cd my-hello-world-starter/
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **ソースコードを開いて編集を始めましょう！！**
 
-    Your site is now running at `http://localhost:8000`!
+    ブラウザで `http://localhost:8000` にアクセスするとあなたのサイトは実行されています！
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    _Note: 2番めのリンク: _`http://localhost:8000/___graphql`_も表示されています。 これは、データのクエリを試すために使うツールです。 このツールの使い方は、[Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)を見てください！_
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    `my-hello-world-starter` ディレクトリを好きなコードエディタで開き、`src/pages/index.js` を編集します。変更して保存するとブラウザでそれがリアルタイムで反映されます！
 
-## 🧐 What's inside?
+## 🧐 ディレクトリの中身は？
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+Gatsbyプロジェクトの中のトップレベルのファイルとディレクトリを簡単に確認しましょう。
 
     .
     ├── node_modules
@@ -58,42 +54,57 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── package.json
     └── README.md
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  **`/node_modules`**: このディレクトリには、プロジェクトが依存するすべてのコードモジュール（npmパッケージ）が自動的にインストールされます。
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+2.  **`/src`**: このディレクトリには、サイトのヘッダーやページテンプレートなど、サイトのフロントエンドに表示されるもの（ブラウザーに表示されるもの）に関連するすべてのコードが含まれます。`src`「ソースコード」の規約です。
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+3.  **`.gitignore`**: このファイルは、バージョン履歴を追跡/保持しないファイルをgitに指示します。
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+4.  **`.prettierrc`**: これは[Prettier](https://prettier.io/)の構成ファイルです。Prettierは、コードのフォーマットの一貫性を保つのに役立つツールです。
 
 5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+6.  **`gatsby-config.js`**: これは、Gatsbyサイトのメイン構成ファイルです。ここでは、サイトのタイトルや説明、含めるGatsbyプラグインなど、サイトに関する情報（メタデータ）を指定できます (詳細については[config docs](https://www.gatsbyjs.org/docs/gatsby-config/)を確認してください)。
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+7.  **`gatsby-node.js`**: このファイルは、Gatsbyが[Gatsby Node API](https://www.gatsbyjs.org/docs/node-apis/)（存在する場合）の使用法を見つけることを期待する場所です。これらにより、サイト構築プロセスの一部に影響を与えるデフォルトのギャツビー設定のカスタマイズ/拡張が可能になります。
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+8.  **`gatsby-ssr.js`**: このファイルは、Gatsbyが[Gatsbyサーバー側レンダリングAPI](https://www.gatsbyjs.org/docs/ssr-apis/)（存在する場合）の使用状況を見つけることを期待する場所です。これらにより、サーバー側のレンダリングに影響を与えるデフォルトのギャツビー設定をカスタマイズできます。
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+9.  **`LICENSE`**: GatsbyはMITライセンスに基づいてライセンスされています。
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+10. **`package-lock.json`** (See `package.json` below, first). これは、プロジェクトにインストールされたnpm依存関係の正確なバージョンに基づいて自動的に生成されたファイルです。**（このファイルを直接変更することはありません）。**
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+11. **`package.json`**: Node.jsプロジェクトのマニフェストファイル。メタデータ（プロジェクトの名前、作成者など）などが含まれます。このマニフェストは、npmがプロジェクトにインストールするパッケージを認識する方法です。
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+12. **`README.md`**: プロジェクトに関する有用な参照情報を含むテキストファイル。
 
-## 🎓 Learning Gatsby
+## 🎓 Gastbyについて学ぼう！
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+もっとガイダンスを探していますか？Gatsbyの完全なドキュメントは [ website](https://www.gatsbyjs.org/)にあります。
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
+## 💫 デプロイ
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+-----------
+
+# Gastbyを使ってReactとMarkdownでブログを作成する
+
+この[チュートリアル](https://www.gatsbyjs.org/docs/ssr-apis/)をやっていく！！
+
+## インストール
+
+1.  **クイックスタートを参考にGatsbyをインストールする**
+
+    Gatsby CLI(コマンドラインツール)を使って、hello-worldスターターを指定して新しいサイトを作成します。
+
+    ```shell
+    # hello-worldスターターを使用して新しいGatsbyサイトを作成する
+    gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-hello-world
+    ```
+
+2.  **GatsbyでMarkdownを変換するプラグインをインストールする**
+
+    
