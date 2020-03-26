@@ -92,7 +92,8 @@ Gatsbyプロジェクトの中のトップレベルのファイルとディレ�
 
 # Gastbyを使ってReactとMarkdownでブログを作成する
 
-この[チュートリアル](https://www.gatsbyjs.org/docs/ssr-apis/)をやっていく！！
+[このチュートリアル](https://www.gatsbyjs.org/docs/ssr-apis/)と[このチュートリアル](https://www.gatsbyjs.org/blog/2017-07-19-creating-a-blog-with-gatsby/)をやっていく！！
+
 
 ## インストール
 
@@ -107,4 +108,107 @@ Gatsbyプロジェクトの中のトップレベルのファイルとディレ�
 
 2.  **GatsbyでMarkdownを変換するプラグインをインストールする**
 
+    MarkdownをGatsbyサイトのコンテンツソースとして使うには、2つのプラグインをインストールする必要があります: `gatsby-source-filesystem`と`gatsby-transformer-remark`
+    これらはGatsbyと同様に`npm`コマンドを使ってインストールできます
+
+    ```shell
+    # npm のiオプションはinstallの省略形
+    # npm5.0.0以降だと--saveをつけなくてもpackage.jsonのdependenciesに追加してくれるらしい
+    npm i gatsby-source-filesystem gatsby-transformer-remark
+    ```
+
+    `gatsby-source-filesystem`プラグインはお使いのコンピュータからファイルを読み込むのに使います。`gatsby-transformer-remark`プラグインはGraphQLでMarkdownファイルの内容を利用できるようになります。
+
+    変換の流れは、
+      1. ディレクトリから`gastby-source-filesystem`がMarkdownとして読み込む
+      2. 読み込んだ1を`gatsby-transfomer-remark`がHTMLに変換する
     
+
+    インストールが終わったら、`gatsby-config.js`を編集します。
+
+    ```js
+    module.exports = {
+      siteMetadata: {
+        title: 'My Blog',
+        description: 'これは私のブログです',
+      },
+      plugins: [
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            name: `pages`,
+            path: `${__dirname}/src/pages`,
+          },
+        },
+        {
+          resolve: `gatsby-transformer-remark`,
+          options: {
+            plugins: [],
+          },
+        },
+      ],
+    }
+    ```
+
+    `options`オブジェクトを使うとプラグインにデータを渡すことができます。オプションが無いときは、`"plugin-name"`でいける。
+
+3.  **最初のMarkdownブログ投稿を作る**
+    `gatsby-source-filesystem`は`src/pages`内にコンテンツがあると思ってるので、その中にMarkdownファイルを入れます。
+
+    Gatsbyにはフォルダ名に命名規則があるわけではないですが、ここでは典型的なフォルダ名をつけようと思います。例えば、`MM-DD-YYYY-title`のように`03-26-2020-helloworld`といった感じで。
+
+    ```shell
+    $ mkdir 2020-03-21-first-post
+    $ mkdir 2020-03-23-second-post
+    $ mkdir 2020-03-25-third-post
+    $ touch 2020-03-21-first-post/index.md
+    $ touch 2020-03-23-second-post/index.md
+    $ touch 2020-03-25-third-post/index.md
+    ```
+
+    作成したMarkdownを編集します。`2020-03-21-first-post/index.md`は以下のようになります。
+
+    ```markdown
+    ---
+    path: '/first-post'
+    date: '2020-03-21'
+    title: 'My first Post'
+    tags: ['foo', 'bar']
+    excerpt: ''
+    ---
+
+    Lorem ipsum.
+    ```
+
+    `---`で囲まれたブロックは[`frontmatter`](https://jekyllrb.com/docs/frontmatter/)です。ここにはタグやサブタイトルなど任意のデータを挿入できます。この中で重要なのは`path`です。これはファイルをレンダリングするURL/パスをページを動的に作成するときに使われます。上記の例では、`http://localhost:8000/first-post`にアクセスすると閲覧することができます。
+
+4.  **GraphQLブラウザを使ってクエリを作る**
+    ブラウザで[`http://localhost:8000/___graphql`](http://localhost:8000/___graphql)にアクセスすると、GraphQLのエディタが出てきます。
+
+    ![](2020-03-26-21-38-31.png)
+
+    画像では4つの場所に分割されている。左から、下層に位置するクエリを表示してくれる場所、クエリエディタ、実行結果画面、クエリのドキュメントになっている。とりあえず、エディタ部分にクエリを書いてみる。
+
+    ```graphql
+    {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
+    }
+    ```
+
+    上部の▶を押して実行すると、実行結果が隣に表示される。ちゃんとデータが取れていると思う。
+    ![](2020-03-26-21-46-55.png)
+
+5.  **GatsbyでGraphQLクエリを使用してホームレイアウトコンポーネントを作成する**
+    
+
+
+## 参考サイト
+-  [Gatsby公式チュートリアル]()
+-  [Gatsby公式ドキュメント]()
+-  [npm install時に「--save」オプションはいらない](https://qiita.com/havveFn/items/c5beda8572aa8c1e6be6)
+-  []
